@@ -81,6 +81,7 @@
 // });
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const Task = require('./models/task'); // Import the Task model
 const app = express();
 const port = 3000;
@@ -88,6 +89,7 @@ const port = 3000;
 // MongoDB connection string
 const uri = 'mongodb+srv://divyabonda462:Divya123@cluster0.cx34y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
+app.use(cors());
 app.use(express.json());
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
